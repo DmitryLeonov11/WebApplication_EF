@@ -15,6 +15,7 @@ namespace DependencyInjection.Modules
         {
             container.RegisterType<IAccountServices, AccountServices>(new HierarchicalLifetimeManager());
             container.RegisterType<IClientsServices, ClientServices>(new HierarchicalLifetimeManager());
+            //container.RegisterType<ILogService, LogServices>(new HierarchicalLifetimeManager());
         }
     }
 }

@@ -16,7 +16,8 @@ namespace WebApplication1.Attributes
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-            var logServices = (ILogService)actionContext.Request.GetDependencyScope().GetService(typeof(ILogService));
+            //var logServices = (ILogService)actionContext.Request.GetDependencyScope().GetServices(typeof(ILogService));
+            var logServices = GetService<ILogService>(actionContext);
             
             string rawRequest;
             using(var stream = new StreamReader(actionContext.Request.Content.ReadAsStreamAsync().Result))
@@ -40,6 +41,11 @@ namespace WebApplication1.Attributes
                 return IPAddress.Parse(((HttpContextBase)request.Properties["MS_HttpContext"]).Request.UserHostAddress).ToString();
             }
             return String.Empty;
+        }
+
+        private T GetService<T>(HttpActionContext actionContext)
+        {
+            return (T)actionContext.Request.GetDependencyScope().GetService(typeof(T));
         }
     }
 }

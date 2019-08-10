@@ -24,6 +24,7 @@ namespace DependencyInjection.Modules
             container.RegisterType<MyContext>(new HierarchicalLifetimeManager(), new InjectionConstructor(optionsBuilder.Options));
             
             container.RegisterType<IAccountRepository, AccountRepository>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ILogRepository, LogRepository>(new ContainerControlledLifetimeManager());
             //container.RegisterType<IClientRepository, ClientRepository>(new ContainerControlledLifetimeManager());
         }
     }
