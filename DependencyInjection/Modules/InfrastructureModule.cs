@@ -25,7 +25,8 @@ namespace DependencyInjection.Modules
             
             container.RegisterType<IAccountRepository, AccountRepository>(new ContainerControlledLifetimeManager());
             container.RegisterType<ILogRepository, LogRepository>(new ContainerControlledLifetimeManager());
-            //container.RegisterType<IClientRepository, ClientRepository>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IClientRepository, ClientRepository>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IExceptionRepository, ExceptionRepository>(new ContainerControlledLifetimeManager());
         }
     }
 }

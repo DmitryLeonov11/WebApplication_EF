@@ -12,7 +12,7 @@ using WebApplication1.Models;
 namespace WebApplication1.Controllers
 {
     [RoutePrefix("clients")]
-    [CustomActionFilter]
+    [CustomActionFilter, CustomExceptionFilter]
     public class ClientController : ApiController
     {
         public readonly IClientsServices _clientServices;

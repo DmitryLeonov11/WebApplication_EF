@@ -1,4 +1,5 @@
-﻿using Infrastructure.Models;
+﻿using Infrastructure.Interfaces;
+using Infrastructure.Models;
 using InfrastructureServices.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace InfrastructureServices.Repositories
 {
-    public class ClientRepository : DbContext
+    public class ClientRepository : IClientRepository
     {
         private readonly MyContext _context;
 

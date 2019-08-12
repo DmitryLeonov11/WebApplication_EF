@@ -12,7 +12,7 @@ using WebApplication1.Models;
 namespace WebApplication1.Controllers
 {
     [RoutePrefix("accounts")]
-    [CustomActionFilter]
+    [CustomActionFilter, CustomExceptionFilter]
     public class AccountController : ApiController
     {
         public readonly IAccountServices _accountServices;
@@ -46,6 +46,12 @@ namespace WebApplication1.Controllers
         public void PostAccount([FromBody] AccountModel accountModel)
         {
 
+        }
+
+        [HttpGet, Route("exception")]
+        public void Generator()
+        {
+            throw new ArgumentNullException();
         }
     }
 }

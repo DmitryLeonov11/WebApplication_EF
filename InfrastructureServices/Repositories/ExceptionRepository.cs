@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace InfrastructureServices.Repositories
 {
-    public class LogRepository : ILogRepository
+    public class ExceptionRepository : IExceptionRepository
     {
-        public readonly MyContext _context;
+        private readonly MyContext _context;
 
-        public LogRepository(MyContext context)
+        public ExceptionRepository(MyContext context)
         {
             _context = context;
         }
 
-        public void Insert(RequestLogEntry entry)
+        public void Insert(ExceptionLogEntry entry)
         {
-            _context.RequestLogEntries.Add(entry);
+            _context.ExceptionLogEntries.Add(entry);
             _context.SaveChanges();
         }
     }

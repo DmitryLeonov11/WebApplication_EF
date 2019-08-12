@@ -120,11 +120,13 @@
   <ItemGroup>
     <Compile Include="Configurations\AccountsConfiguration.cs" />
     <Compile Include="Configurations\ClientsConfiguration.cs" />
+    <Compile Include="Configurations\ExceptionLogConfiguration.cs" />
     <Compile Include="Configurations\RequestLogEntryConfiguration.cs" />
     <Compile Include="Contexts\MyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\ExceptionRepository.cs" />
     <Compile Include="Repositories\LogRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -18,6 +18,7 @@ namespace InfrastructureServices.Contexts
         public virtual DbSet<InfrastructureClient> Clients { get; set; }
         public virtual DbSet<InfrastructureAccount> Accounts { get; set; }
         public virtual DbSet<RequestLogEntry> RequestLogEntries { get; set; }
+        public virtual DbSet<ExceptionLogEntry> ExceptionLogEntries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +28,8 @@ namespace InfrastructureServices.Contexts
                 ApplyConfiguration(new AccountsConfiguration()));
             base.OnModelCreating(modelBuilder.
                 ApplyConfiguration(new RequestLogEntryConfiguration()));
+            base.OnModelCreating(modelBuilder.
+                ApplyConfiguration(new ExceptionLogConfiguration()));
         }
     }
 }

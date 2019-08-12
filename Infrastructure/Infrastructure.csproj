@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Interfaces\IAccountRepository.cs" />
     <Compile Include="Interfaces\IClientRepository.cs" />
+    <Compile Include="Interfaces\IExceptionRepository.cs" />
     <Compile Include="Interfaces\ILogRepository.cs" />
+    <Compile Include="Models\ExceptionLogEntry.cs" />
     <Compile Include="Models\InfrastructureAccount.cs" />
     <Compile Include="Models\InfrastructureClient.cs" />
     <Compile Include="Models\RequestLogEntry.cs" />

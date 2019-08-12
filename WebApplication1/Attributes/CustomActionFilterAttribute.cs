@@ -16,7 +16,6 @@ namespace WebApplication1.Attributes
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-            //var logServices = (ILogService)actionContext.Request.GetDependencyScope().GetServices(typeof(ILogService));
             var logServices = GetService<ILogService>(actionContext);
             
             string rawRequest;

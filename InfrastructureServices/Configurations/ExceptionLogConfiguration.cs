@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace InfrastructureServices.Configurations
 {
-    public class RequestLogEntryConfiguration : IEntityTypeConfiguration<RequestLogEntry>
+    public class ExceptionLogConfiguration : IEntityTypeConfiguration<ExceptionLogEntry>
     {
-        public void Configure(EntityTypeBuilder<RequestLogEntry> builder)
+        public void Configure(EntityTypeBuilder<ExceptionLogEntry> builder)
         {
-            builder.ToTable("Logs");
-            builder.HasKey(_ => _.Id);
+            builder.ToTable("Exceptions");
+            builder.HasKey(_=>_.Id);
         }
     }
 }
