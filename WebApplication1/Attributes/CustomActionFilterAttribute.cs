@@ -19,7 +19,7 @@ namespace WebApplication1.Attributes
             var logServices = GetService<ILogService>(actionContext);
             
             string rawRequest;
-            using(var stream = new StreamReader(actionContext.Request.Content.ReadAsStreamAsync().Result))
+            using (var stream = new StreamReader(actionContext.Request.Content.ReadAsStreamAsync().Result))
             {
                 stream.BaseStream.Position = 0;
                 rawRequest = stream.ReadToEnd();

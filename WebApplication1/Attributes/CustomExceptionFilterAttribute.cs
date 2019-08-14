@@ -16,11 +16,11 @@ namespace WebApplication1.Attributes
             var exceptionMessage = string.Empty;
             if(actionExecutedContext.Exception.InnerException == null)
             {
-                exceptionMessage = actionExecutedContext.Exception.HResult.ToString();
+                exceptionMessage = actionExecutedContext.Exception.Message.ToString();
             }
             else
             {
-                exceptionMessage = actionExecutedContext.Exception.InnerException.HResult.ToString();
+                exceptionMessage = actionExecutedContext.Exception.InnerException.Message.ToString();
             }
             var exceptionServices = (IExceptionService)actionExecutedContext.Request.GetDependencyScope().GetService(typeof(IExceptionService));
             exceptionServices.ExceptionRequest(new ExceptionInfo()

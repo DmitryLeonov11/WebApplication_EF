@@ -21,7 +21,7 @@ namespace DependencyInjection.Modules
             optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["MyContext"].ConnectionString);
 
             using (var context = new MyContext(optionsBuilder.Options)) context.Database.EnsureCreated();
-            container.RegisterType<MyContext>(new HierarchicalLifetimeManager(), new InjectionConstructor(optionsBuilder.Options));
+            container.RegisterType<MyContext>(new InjectionConstructor(optionsBuilder.Options));
             
             container.RegisterType<IAccountRepository, AccountRepository>(new ContainerControlledLifetimeManager());
             container.RegisterType<ILogRepository, LogRepository>(new ContainerControlledLifetimeManager());

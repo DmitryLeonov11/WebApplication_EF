@@ -36,7 +36,8 @@ namespace InfrastructureServices.Repositories
 
         public IList<InfrastructureAccount> GetAccounts()
         {
-            return _context.Accounts.ToList();
+            var accountList = _context.Accounts.ToList();
+            return accountList;
         }
     }
 }

@@ -339,17 +339,17 @@ namespace WebApplication1.Areas.HelpPage
                     mediaType.MediaType,
                     UnwrapException(e).Message));
             }
-            finally
-            {
-                if (ms != null)
-                {
-                    ms.Dispose();
-                }
-                if (content != null)
-                {
-                    content.Dispose();
-                }
-            }
+            //finally
+            //{
+            //    if (ms != null)
+            //    {
+            //        ms.Dispose();
+            //    }
+            //    if (content != null)
+            //    {
+            //        content.Dispose();
+            //    }
+            //}
 
             return sample;
         }
